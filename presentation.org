@@ -1,0 +1,79 @@
+* Einleitung
+** Vorkenntnisse
+** Inhalte und Form
+* Web Development mit Clojure
+** Projekt-Setup [0/4]
+- [ ] Bibliotheken
+  Ring, Compojure, Hiccup
+  Eventuell: Liberator, Friend
+- [ ] Entwicklungstools
+  lein-ring, ring-mock
+- [ ] lein-ring konfigurieren
+- [ ] Cider starten
+** Ring und Handler [0/3]
+- [ ] Test schreiben
+  (:require [clojure.test :refer :all]
+            [ring.mock.request :refer [request]])
+  clojure-test-mode aktivieren und testen
+- [ ] Handler-Funktion implementieren
+- [ ] Anwendung mit lein ring server starten
+** Routing mit Compojure [0/1]
+- [ ] Routen für Willkommen und Ergebnisse hinzufügen
+  (:require [compojure.core :refer [defroutes GET])
+** HTML-Generierung mit Hiccup [0/4]
+- [ ] Haupttemplate erzeugen
+  (:require [hiccup.element :refer [link-to unordered-list]]
+            [hiccup.page :refer [html5]])
+- [ ] Views für Willkommen und Ergebnisse implementieren
+- [ ] Handler für Willkommen und Ergebnisse implementieren
+- [ ] Routen auf die neuen Handler anpassen
+** Ring Middleware [0/1]
+- [ ] wrap-base-url middleware
+  (:require [hiccup.middleware :refer [wrap-base-url])
+** Statische Ressourcen [0/3]
+- [ ] Stylesheet anpassen
+- [ ] Route für statische Ressources hinzufügen
+  (:require [compojure.route :as route])
+- [ ] Haupttemplate um Stylesheet ergänzen
+  (:require [hiccup.page :refer [include-css]])
+** Formulardaten auswerten [0/8]
+- [ ] Formular zu Willkommensseite hinzufügen
+  (:require [hiccup.form :refer [form-to label select-options submit-button]])
+- [ ] Danke-Seite implementieren
+- [ ] Ergebnis-Seite um Durchschnittsbewertung ergänzen
+- [ ] Ratings-Modell implementieren
+- [ ] Handler für Bewertungen implementieren
+- [ ] Handler für Ergebnisse anpassen
+- [ ] wrap-params Middleware hinzufügen
+  (:require [ring.middleware.params :refer [wrap-params]])
+- [ ] Route für Bewertungen hinzufügen
+** Session mit Ring [0/3]
+- [ ] Session-Middleware mit cookie-store konfigurieren
+  (:require [ring.middleware.session :refer [wrap-session]]
+            [ring.middleware.session.cookie :refer [cookie-store]])
+- [ ] Bewertungs-Handler anpassen, um Session-Parameter zu setzen
+- [ ] Willkommens-Handler und -Seite anpassen, so dass Formular versteckt wird
+** Deployment [0/3]
+- [ ] WAR mit lein ring uberwar erzeugen
+- [ ] Tomcat starten
+- [ ] WAR in das webapp-Verzeichnis von Tomcat kopieren
+- [ ] Optional: OpenShift-Deployment, falls Internet vorhanden
+** Fragen?
+* Optional
+** Webanwendungen mit Friend absichern [0/5]
+- [ ] User-Modell implementieren
+  (:require [cemerick.friend.credentials :as credentials])
+- [ ] Authentifizierungs-Middleware mit basic-http workflow hinzufügen
+  (:require [cemerick.friend :as friend]
+            [cemerick.friend.credentials :as credentials]
+            [cemerick.friend.workflows :as workflows])
+- [ ] Bewertungsmodell um Frequenz erweitern
+- [ ] Admin-Handler und Admin-Seite hinzufügen
+- [ ] Admin-Seite absichern
+
+** HTTP API mit Liberator [0/3]
+- [ ] Bewertungs-Ressource anlegen
+  (:require [liberator.core :refer [defresource]]
+            [clojure.data.json :as json])
+- [ ] Route zu Ressourcen anlegen
+- [ ] Mit Curl die Ergebnisse anzeigen
