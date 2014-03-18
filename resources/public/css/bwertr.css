@@ -1,0 +1,13 @@
+body {
+    font-family: Eurostile, Helvetica, sans-serif;
+}
+
+nav ul {
+    padding: 0px;
+}
+
+nav li {
+    padding-right: 20px;
+    list-style-type: none;
+    display: inline;
+}

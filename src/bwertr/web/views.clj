@@ -1,11 +1,12 @@
 (ns bwertr.web.views
   (:require [hiccup.element :refer [link-to unordered-list]]
-            [hiccup.page :refer [html5]]))
+            [hiccup.page :refer [html5 include-css]]))
 
 (defn template [title & content]
   (html5
    [:head
-    [:title "bwertr - " title]]
+    [:title "bwertr - " title]
+    (include-css "/css/bwertr.css")]
    [:body
     [:nav
      (unordered-list [(link-to "/" "Willkommen")

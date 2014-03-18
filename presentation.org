@@ -66,11 +66,11 @@
 ** Ring Middleware [1/1]
 - [X] wrap-base-url middleware
   (:require [hiccup.middleware :refer [wrap-base-url])
-** Statische Ressourcen [0/3]
-- [ ] Stylesheet anpassen
-- [ ] Route für statische Ressources hinzufügen
+** Statische Ressourcen [3/3]
+- [X] Stylesheet anpassen
+- [X] Route für statische Ressources hinzufügen
   (:require [compojure.route :as route])
-- [ ] Haupttemplate um Stylesheet ergänzen
+- [X] Haupttemplate um Stylesheet ergänzen
   (:require [hiccup.page :refer [include-css]])
 ** Formulardaten auswerten [0/8]
 - [ ] Formular zu Willkommensseite hinzufügen
