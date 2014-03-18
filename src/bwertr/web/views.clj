@@ -11,7 +11,8 @@
    [:body
     [:nav
      (unordered-list [(link-to "/" "Willkommen")
-                      (link-to "/results" "Ergebnisse")])]
+                      (link-to "/results" "Ergebnisse")
+                      (link-to "/admin" "Admin")])]
     [:div#content content]]))
 
 (defn rating-form []
@@ -28,6 +29,13 @@
     [:p "Im Durchschnitt wurde der Vortrag mit " average-rating " bewertet."]
     [:p "Der Vortrag wurde noch nicht bewertet."]))
 
+(defn stats-part [stats]
+  (if (seq stats)
+    [:table
+     [:tr [:td "Bewertung"] [:td "Anzahl"]]
+     (map (fn [[rating count]] [:tr [:td rating] [:td count]]) stats)]
+    [:p "Die Präsentation wurde noch nicht bewertet."]))
+
 (defn welcome [own-rating]
   (template "willkommen"
             [:h1 "Willkommen auf der JavaLand 2014!"]
@@ -40,6 +48,13 @@
   (template "ergebnisse"
             [:h1 "Ergebnisse"]
             (average-rating-part average-rating)))
+
+(defn admin [stats]
+  (template "admin"
+            [:h1 "Administration"]
+            [:p "Willkommen im Administrationsbereich."]
+            [:h2 "Statistiken"]
+            (stats-part stats)))
 
 (defn thank-you [own-rating average-rating]
   (template "vielen dank"

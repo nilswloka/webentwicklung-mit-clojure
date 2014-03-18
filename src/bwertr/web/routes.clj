@@ -1,5 +1,9 @@
 (ns bwertr.web.routes
-  (:require [bwertr.web.handlers :as h]
+  (:require [bwertr.model.users :as users]
+            [bwertr.web.handlers :as h]
+            [cemerick.friend :as friend]
+            [cemerick.friend.credentials :as credentials]
+            [cemerick.friend.workflows :as workflows]
             [compojure.core :refer [defroutes GET POST]]
             [compojure.route :as route]
             [hiccup.middleware :refer [wrap-base-url]]
@@ -10,6 +14,7 @@
 (defroutes app-routes
   (GET "/" [] h/welcome)
   (GET "/results" [] h/results)
+  (GET "/admin" [] (friend/authenticated #{::admin} h/admin))
   (POST "/ratings" [] h/rate)
   (route/resources "/")
   (route/not-found "<h1>Page not found.</h1>"))
@@ -18,4 +23,9 @@
   (-> app-routes
       wrap-base-url
       wrap-params
-      (wrap-session {:store (cookie-store {:key "JavaLand2014!!!!"})})))
+      (wrap-session {:store (cookie-store {:key "JavaLand2014!!!!"})})
+      (friend/authenticate {:allow-anon? true
+                            :unauthenticated-handler #(workflows/http-basic-deny "bwertr" %)
+                            :workflows [(workflows/http-basic
+                                         :credential-fn #(credentials/bcrypt-credential-fn (users/all) %)
+                                         :realm "bwertr")]})))

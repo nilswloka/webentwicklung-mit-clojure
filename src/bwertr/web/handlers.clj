@@ -9,6 +9,9 @@
 (defn results [request]
   (v/results (ratings/average)))
 
+(defn admin [request]
+  (v/admin (ratings/stats)))
+
 (defn rate [request]
   (let [params (:params request)
         session (:session request)

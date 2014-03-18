@@ -96,17 +96,16 @@
 - [ ] Optional: OpenShift-Deployment, falls Internet vorhanden
 ** Fragen?
 * Optional
-** Webanwendungen mit Friend absichern [0/5]
-- [ ] User-Modell implementieren
+** Webanwendungen mit Friend absichern [5/5]
+- [X] User-Modell implementieren
   (:require [cemerick.friend.credentials :as credentials])
-- [ ] Authentifizierungs-Middleware mit basic-http workflow hinzufügen
+- [X] Authentifizierungs-Middleware mit basic-http workflow hinzufügen
   (:require [cemerick.friend :as friend]
             [cemerick.friend.credentials :as credentials]
             [cemerick.friend.workflows :as workflows])
-- [ ] Bewertungsmodell um Frequenz erweitern
-- [ ] Admin-Handler und Admin-Seite hinzufügen
-- [ ] Admin-Seite absichern
-
+- [X] Bewertungsmodell um Frequenz erweitern
+- [X] Admin-Handler und Admin-Seite hinzufügen
+- [X] Admin-Seite absichern
 ** HTTP API mit Liberator [0/3]
 - [ ] Bewertungs-Ressource anlegen
   (:require [liberator.core :refer [defresource]]
