@@ -63,8 +63,8 @@
 - [X] Views für Willkommen und Ergebnisse implementieren
 - [X] Handler für Willkommen und Ergebnisse implementieren
 - [X] Routen auf die neuen Handler anpassen
-** Ring Middleware [0/1]
-- [ ] wrap-base-url middleware
+** Ring Middleware [1/1]
+- [X] wrap-base-url middleware
   (:require [hiccup.middleware :refer [wrap-base-url])
 ** Statische Ressourcen [0/3]
 - [ ] Stylesheet anpassen
