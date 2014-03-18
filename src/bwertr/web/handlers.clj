@@ -3,14 +3,19 @@
             [bwertr.web.views :as v]))
 
 (defn welcome [request]
-  (v/welcome))
+  (let [session (:session request)]
+    (v/welcome (:own-rating session))))
 
 (defn results [request]
   (v/results (ratings/average)))
 
 (defn rate [request]
   (let [params (:params request)
+        session (:session request)
         rating-param (get params "rating")
         rating-value (Integer/valueOf rating-param)]
     (ratings/add! rating-value)
-    (v/thank-you rating-value (ratings/average))))
+    {:status 200
+     :headers {"ContentType" "text/html"}
+     :body (v/thank-you rating-value (ratings/average))
+     :session (into session {:own-rating rating-value})}))

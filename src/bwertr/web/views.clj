@@ -16,7 +16,7 @@
 
 (defn rating-form []
   (list
-   [:p "Wenn Sie helfen wollen, Ihn zu verbessern, geben Sie bitte eine Wertung ab (1 - am schlechtesten, 10 - am besten):"]
+   [:p "Wenn Sie helfen wollen, ihn zu verbessern, geben Sie bitte eine Wertung ab (1 - am schlechtesten, 10 - am besten):"]
    (form-to [:post "/ratings"]
             (label :rating "Bitte wählen Sie: ")
             [:select#rating {:name :rating}
@@ -28,11 +28,13 @@
     [:p "Im Durchschnitt wurde der Vortrag mit " average-rating " bewertet."]
     [:p "Der Vortrag wurde noch nicht bewertet."]))
 
-(defn welcome []
+(defn welcome [own-rating]
   (template "willkommen"
             [:h1 "Willkommen auf der JavaLand 2014!"]
             [:p "Ich hoffe, mein Vortrag gefällt Ihnen."]
-            (rating-form)))
+            (if own-rating
+              [:p "Sie haben ihn mit " own-rating " von 10 Punkten bewertet."]
+              (rating-form))))
 
 (defn results [average-rating]
   (template "ergebnisse"

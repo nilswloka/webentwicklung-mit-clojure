@@ -83,12 +83,12 @@
 - [X] wrap-params Middleware hinzufügen
   (:require [ring.middleware.params :refer [wrap-params]])
 - [X] Route für Bewertungen hinzufügen
-** Session mit Ring [0/3]
-- [ ] Session-Middleware mit cookie-store konfigurieren
+** Session mit Ring [3/3]
+- [X] Session-Middleware mit cookie-store konfigurieren
   (:require [ring.middleware.session :refer [wrap-session]]
             [ring.middleware.session.cookie :refer [cookie-store]])
-- [ ] Bewertungs-Handler anpassen, um Session-Parameter zu setzen
-- [ ] Willkommens-Handler und -Seite anpassen, so dass Formular versteckt wird
+- [X] Bewertungs-Handler anpassen, um Session-Parameter zu setzen
+- [X] Willkommens-Handler und -Seite anpassen, so dass Formular versteckt wird
 ** Deployment [0/3]
 - [ ] WAR mit lein ring uberwar erzeugen
 - [ ] Tomcat starten
