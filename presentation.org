@@ -38,14 +38,14 @@
 ** Vorkenntnisse
 ** Inhalte und Form
 * Web Development mit Clojure
-** Projekt-Setup [0/4]
-- [ ] Bibliotheken
+** Projekt-Setup [4/4]
+- [X] Bibliotheken
   Ring, Compojure, Hiccup
   Eventuell: Liberator, Friend
-- [ ] Entwicklungstools
+- [X] Entwicklungstools
   lein-ring, ring-mock
-- [ ] lein-ring konfigurieren
-- [ ] Cider starten
+- [X] lein-ring konfigurieren
+- [X] Cider starten
 ** Ring und Handler [0/3]
 - [ ] Test schreiben
   (:require [clojure.test :refer :all]
