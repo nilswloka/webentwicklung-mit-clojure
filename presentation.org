@@ -56,13 +56,13 @@
 ** Routing mit Compojure [1/1]
 - [X] Routen für Willkommen und Ergebnisse hinzufügen
   (:require [compojure.core :refer [defroutes GET])
-** HTML-Generierung mit Hiccup [0/4]
-- [ ] Haupttemplate erzeugen
+** HTML-Generierung mit Hiccup [4/4]
+- [X] Haupttemplate erzeugen
   (:require [hiccup.element :refer [link-to unordered-list]]
             [hiccup.page :refer [html5]])
-- [ ] Views für Willkommen und Ergebnisse implementieren
-- [ ] Handler für Willkommen und Ergebnisse implementieren
-- [ ] Routen auf die neuen Handler anpassen
+- [X] Views für Willkommen und Ergebnisse implementieren
+- [X] Handler für Willkommen und Ergebnisse implementieren
+- [X] Routen auf die neuen Handler anpassen
 ** Ring Middleware [0/1]
 - [ ] wrap-base-url middleware
   (:require [hiccup.middleware :refer [wrap-base-url])
