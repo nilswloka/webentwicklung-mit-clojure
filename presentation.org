@@ -106,9 +106,9 @@
 - [X] Bewertungsmodell um Frequenz erweitern
 - [X] Admin-Handler und Admin-Seite hinzufügen
 - [X] Admin-Seite absichern
-** HTTP API mit Liberator [0/3]
-- [ ] Bewertungs-Ressource anlegen
+** HTTP API mit Liberator [3/3]
+- [X] Bewertungs-Ressource anlegen
   (:require [liberator.core :refer [defresource]]
             [clojure.data.json :as json])
-- [ ] Route zu Ressourcen anlegen
-- [ ] Mit Curl die Ergebnisse anzeigen
+- [X] Route zu Ressourcen anlegen
+- [X] Mit Curl die Ergebnisse anzeigen

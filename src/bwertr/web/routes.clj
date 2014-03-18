@@ -1,10 +1,11 @@
 (ns bwertr.web.routes
   (:require [bwertr.model.users :as users]
+            [bwertr.web.api :as api]
             [bwertr.web.handlers :as h]
             [cemerick.friend :as friend]
             [cemerick.friend.credentials :as credentials]
             [cemerick.friend.workflows :as workflows]
-            [compojure.core :refer [defroutes GET POST]]
+            [compojure.core :refer [ANY defroutes GET POST]]
             [compojure.route :as route]
             [hiccup.middleware :refer [wrap-base-url]]
             [ring.middleware.params :refer [wrap-params]]
@@ -16,6 +17,7 @@
   (GET "/results" [] h/results)
   (GET "/admin" [] (friend/authenticated #{::admin} h/admin))
   (POST "/ratings" [] h/rate)
+  (ANY "/api/ratings" [] api/ratings)
   (route/resources "/")
   (route/not-found "<h1>Page not found.</h1>"))
 
