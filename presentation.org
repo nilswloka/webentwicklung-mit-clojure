@@ -46,13 +46,13 @@
   lein-ring, ring-mock
 - [X] lein-ring konfigurieren
 - [X] Cider starten
-** Ring und Handler [0/3]
-- [ ] Test schreiben
+** Ring und Handler [3/3]
+- [X] Test schreiben
   (:require [clojure.test :refer :all]
             [ring.mock.request :refer [request]])
   clojure-test-mode aktivieren und testen
-- [ ] Handler-Funktion implementieren
-- [ ] Anwendung mit lein ring server starten
+- [X] Handler-Funktion implementieren
+- [X] Anwendung mit lein ring server starten
 ** Routing mit Compojure [0/1]
 - [ ] Routen für Willkommen und Ergebnisse hinzufügen
   (:require [compojure.core :refer [defroutes GET])
