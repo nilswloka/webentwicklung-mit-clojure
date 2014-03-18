@@ -53,8 +53,8 @@
   clojure-test-mode aktivieren und testen
 - [X] Handler-Funktion implementieren
 - [X] Anwendung mit lein ring server starten
-** Routing mit Compojure [0/1]
-- [ ] Routen für Willkommen und Ergebnisse hinzufügen
+** Routing mit Compojure [1/1]
+- [X] Routen für Willkommen und Ergebnisse hinzufügen
   (:require [compojure.core :refer [defroutes GET])
 ** HTML-Generierung mit Hiccup [0/4]
 - [ ] Haupttemplate erzeugen
