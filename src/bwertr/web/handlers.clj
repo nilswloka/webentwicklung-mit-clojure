@@ -19,6 +19,6 @@
         rating-value (Integer/valueOf rating-param)]
     (ratings/add! rating-value)
     {:status 200
-     :headers {"ContentType" "text/html"}
+     :headers {"Content-Type" "text/html"}
      :body (v/thank-you rating-value (ratings/average))
      :session (into session {:own-rating rating-value})}))

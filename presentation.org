@@ -89,11 +89,11 @@
             [ring.middleware.session.cookie :refer [cookie-store]])
 - [X] Bewertungs-Handler anpassen, um Session-Parameter zu setzen
 - [X] Willkommens-Handler und -Seite anpassen, so dass Formular versteckt wird
-** Deployment [0/3]
-- [ ] WAR mit lein ring uberwar erzeugen
-- [ ] Tomcat starten
-- [ ] WAR in das webapp-Verzeichnis von Tomcat kopieren
-- [ ] Optional: OpenShift-Deployment, falls Internet vorhanden
+** Deployment [4/4]
+- [X] WAR mit lein ring uberwar erzeugen
+- [X] Tomcat starten
+- [X] WAR in das webapp-Verzeichnis von Tomcat kopieren
+- [X] Optional: OpenShift-Deployment, falls Internet vorhanden
 ** Fragen?
 * Optional
 ** Webanwendungen mit Friend absichern [5/5]
